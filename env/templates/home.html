@@ -1,0 +1,53 @@
+{% extends 'layouts-container.html' %}
+jp3{% block content %}
+<h1>{{nilai}}</h1>
+<div class="table-responsive">
+    <table class="table table-primary">
+        <thead>
+            <tr>
+                <th scope="col">No.</th>
+                <th scope="col">Nama Buah</th>
+                <th scope="col">Asal Buah</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for no, namabuah, asalbuah in data["No"] | zip(data["Buah"], data["Negara"] ) %}
+            <tr>
+                <td>{{ no }}</td>
+                <td>{{ namabuah }}</td>
+                <td>{{ asalbuah }}</td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-primary">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nama</th>
+                <th scope="col">Password</th>
+                <th scope="col">Username</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for item in dataapi %}
+            <tr>
+                <td>{{ item._id }}</td>
+                <td>{{ item.nama }}</td>
+                <td>{{ item.password }}</td>
+                <td>{{ item.username }}</td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}
