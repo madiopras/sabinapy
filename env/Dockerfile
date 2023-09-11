@@ -1,6 +1,6 @@
 FROM python:3-alpine3.9
-WORKDIR /app
-COPY . /app
+WORKDIR /user/src/app
+COPY './requirements.txt' .
 RUN pip install -r requirements.txt
-EXPOSE 80
-CMD python ./app.py
+COPY . .
+ENTRYPOINT [ "pyton", "app.py" ]

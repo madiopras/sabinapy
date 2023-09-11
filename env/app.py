@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, session, url_for, redirect
-from flask_restful import Resource, Api
 from flask_cors import CORS
 import requests
 
